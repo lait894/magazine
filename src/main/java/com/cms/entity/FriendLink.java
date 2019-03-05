@@ -32,7 +32,7 @@ public class FriendLink extends BaseFriendLink<FriendLink> {
             filterSql+= " and name like '%"+name+"%'";
         }
 	    String orderBySql = DBUtils.getOrderBySql("createDate desc");
-		return paginate(pageNumber, pageSize, "select *", "from kf_friend_link where 1=1 "+filterSql+orderBySql);
+		return paginate(pageNumber, pageSize, "select *", "from lt_friend_link where 1=1 "+filterSql+orderBySql);
 	}
 	
 	/**
@@ -54,7 +54,7 @@ public class FriendLink extends BaseFriendLink<FriendLink> {
 		    orderBySql = DBUtils.getOrderBySql(orderBy);
 		}
 		String countSql=DBUtils.getCountSql(start, count);
-		return find("select * from kf_friend_link where 1=1 "+orderBySql+countSql);
+		return find("select * from lt_friend_link where 1=1 "+orderBySql+countSql);
 	}
 	
 	/**
@@ -70,6 +70,6 @@ public class FriendLink extends BaseFriendLink<FriendLink> {
 		    filterSql+= " and type = '"+type+"'";
 		}
 		String orderBySql = DBUtils.getOrderBySql("createDate desc");
-		return find("select * from kf_friend_link where 1=1 "+filterSql+orderBySql);
+		return find("select * from lt_friend_link where 1=1 "+filterSql+orderBySql);
 	}
 }

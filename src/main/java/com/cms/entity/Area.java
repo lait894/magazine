@@ -78,7 +78,7 @@ public class Area extends BaseArea<Area> {
      */
     public List<Area> getChildren() {
         if(children == null){
-            children = find("select * from kf_area where parentId=?",getId());
+            children = find("select * from lt_area where parentId=?",getId());
         }
         return children;
     }
@@ -103,7 +103,7 @@ public class Area extends BaseArea<Area> {
 	public List<Area> findRoots(Integer count){
 		String countSql=DBUtils.getCountSql(null, count);
 		String orderBySql = DBUtils.getOrderBySql("sort asc");
-		return find("select * from kf_area where parentId is null "+orderBySql+countSql);
+		return find("select * from lt_area where parentId is null "+orderBySql+countSql);
 	}
 	
 	
@@ -126,9 +126,9 @@ public class Area extends BaseArea<Area> {
 		if(recursive){
 			String countSql=DBUtils.getCountSql(null, count);
 			String orderBySql = DBUtils.getOrderBySql("grade asc");
-			return find("select * from kf_area where id in ("+StringUtils.join(area.getParentIds(), ",")+") "+orderBySql+countSql);
+			return find("select * from lt_area where id in ("+StringUtils.join(area.getParentIds(), ",")+") "+orderBySql+countSql);
 		}else{
-			return find("select * from kf_area where id = ? ",findById(areaId).getParentId());
+			return find("select * from lt_area where id = ? ",findById(areaId).getParentId());
 		}
 	}
 	
@@ -150,15 +150,15 @@ public class Area extends BaseArea<Area> {
 			String orderBySql = DBUtils.getOrderBySql("grade asc,sort asc");
 			List<Area> productCategories;
 			if(areaId!=null){
-				productCategories = find("select * from kf_area where treePath like ? "+orderBySql+countSql,"%,"+areaId+",%");
+				productCategories = find("select * from lt_area where treePath like ? "+orderBySql+countSql,"%,"+areaId+",%");
 			}else{
-				productCategories = find("select * from kf_area where 1=1 "+orderBySql+countSql);
+				productCategories = find("select * from lt_area where 1=1 "+orderBySql+countSql);
 			}
 			sort(productCategories);
 			return productCategories;
 		}else{
 			String orderBySql = DBUtils.getOrderBySql("sort asc");
-			return find("select * from kf_area where parentId = ? "+orderBySql,areaId);
+			return find("select * from lt_area where parentId = ? "+orderBySql,areaId);
 		}
 	}
 	

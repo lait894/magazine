@@ -54,7 +54,7 @@ public class Order extends BaseOrder<Order> {
      */
     public Payment getPayment(){
         if(payment == null){
-           new Payment().dao().find("select * from kf_payment where orderId=?",getId());
+           new Payment().dao().find("select * from lt_payment where orderId=?",getId());
         }
         return payment;
     }
@@ -111,7 +111,7 @@ public class Order extends BaseOrder<Order> {
      */
     public List<OrderItem> getOrderItems(){
         if(orderItems == null){
-            orderItems = new OrderItem().dao().find("select * from kf_order_item where orderId=? ", getId());
+            orderItems = new OrderItem().dao().find("select * from lt_order_item where orderId=? ", getId());
         }
         return orderItems;
     }
@@ -132,7 +132,7 @@ public class Order extends BaseOrder<Order> {
             filterSql+= " and sn like '%"+sn+"%'";
         }
         String orderBySql = DBUtils.getOrderBySql("createDate desc");
-        return paginate(pageNumber, pageSize, "select *", "from kf_order where 1=1 "+filterSql+orderBySql);
+        return paginate(pageNumber, pageSize, "select *", "from lt_order where 1=1 "+filterSql+orderBySql);
     }
     
     
@@ -156,6 +156,6 @@ public class Order extends BaseOrder<Order> {
             filterSql+=" and status='"+status+"'";
         }
         String orderBySql = DBUtils.getOrderBySql("createDate desc");
-        return paginate(pageNumber, pageSize, "select *", "from kf_order where 1=1 "+filterSql+orderBySql);
+        return paginate(pageNumber, pageSize, "select *", "from lt_order where 1=1 "+filterSql+orderBySql);
     }
 }

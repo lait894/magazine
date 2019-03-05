@@ -61,7 +61,7 @@ public class ProductCategory extends BaseProductCategory<ProductCategory> {
      */
     public List<Product> getProducts(){
         if(products == null){
-            products = new Product().dao().find("select * from kf_product where productCategoryId = ?",getId());
+            products = new Product().dao().find("select * from lt_product where productCategoryId = ?",getId());
         }
         return products;
     }
@@ -73,7 +73,7 @@ public class ProductCategory extends BaseProductCategory<ProductCategory> {
      */
     public List<ProductCategory> getChildren() {
         if(children == null){
-            children = new ProductCategory().dao().find("select * from kf_product_category where parentId=?",getParentId());
+            children = new ProductCategory().dao().find("select * from lt_product_category where parentId=?",getParentId());
         }
         return children;
     }
@@ -97,7 +97,7 @@ public class ProductCategory extends BaseProductCategory<ProductCategory> {
      */
     public List<Parameter> getParameters() {
         if(parameters == null){
-            parameters = new Parameter().dao().find("select * from kf_parameter where productCategoryId = ?",getId());
+            parameters = new Parameter().dao().find("select * from lt_parameter where productCategoryId = ?",getId());
         }
         return parameters;
     }
@@ -122,7 +122,7 @@ public class ProductCategory extends BaseProductCategory<ProductCategory> {
     public List<ProductCategory> findRoots(Integer count){
         String orderBySql = DBUtils.getOrderBySql("sort asc");
         String countSql=DBUtils.getCountSql(null, count);
-        return find("select * from kf_product_category where parentId is null "+orderBySql+countSql);
+        return find("select * from lt_product_category where parentId is null "+orderBySql+countSql);
     }
     
     
@@ -145,9 +145,9 @@ public class ProductCategory extends BaseProductCategory<ProductCategory> {
         if(recursive){
             String countSql=DBUtils.getCountSql(null, count);
             String orderBySql = DBUtils.getOrderBySql("grade asc");
-            return find("select * from kf_product_category where id in ("+StringUtils.join(productCategory.getParentIds(), ",")+") "+orderBySql+countSql);
+            return find("select * from lt_product_category where id in ("+StringUtils.join(productCategory.getParentIds(), ",")+") "+orderBySql+countSql);
         }else{
-            return find("select * from kf_product_category where id = ? ",findById(productCategoryId).getParentId());
+            return find("select * from lt_product_category where id = ? ",findById(productCategoryId).getParentId());
         }
     }
     
@@ -169,15 +169,15 @@ public class ProductCategory extends BaseProductCategory<ProductCategory> {
             String orderBySql = DBUtils.getOrderBySql("grade asc,sort asc");
             List<ProductCategory> productCategories;
             if(productCategoryId!=null){
-                productCategories = find("select * from kf_product_category where treePath like ? "+orderBySql+countSql,"%,"+productCategoryId+",%");
+                productCategories = find("select * from lt_product_category where treePath like ? "+orderBySql+countSql,"%,"+productCategoryId+",%");
             }else{
-                productCategories = find("select * from kf_product_category where 1=1 "+orderBySql+countSql);
+                productCategories = find("select * from lt_product_category where 1=1 "+orderBySql+countSql);
             }
             sort(productCategories);
             return productCategories;
         }else{
             String orderBySql = DBUtils.getOrderBySql("sort asc");
-            return find("select * from kf_product_category where parentId = ? "+orderBySql,productCategoryId);
+            return find("select * from lt_product_category where parentId = ? "+orderBySql,productCategoryId);
         }
     }
     

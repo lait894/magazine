@@ -23,6 +23,6 @@ public class SafeKey extends BaseSafeKey<SafeKey> {
      * @return
      */
     public SafeKey findByMobile(String mobile,Integer type){
-        return findFirst("select * from kf_safe_key where mobile=? and type=? ",mobile,type);
+        return findFirst("select * from lt_safe_key where mobile=? and type=? ",mobile,type);
     }
 }

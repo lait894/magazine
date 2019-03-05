@@ -20,7 +20,7 @@ public class MessageConfig extends BaseMessageConfig<MessageConfig> {
 	 * @return 所有消息配置
 	 */
 	public List<MessageConfig> findAll(){
-		return find("select * from kf_message_config");
+		return find("select * from lt_message_config");
 	}
 	
 	/**
@@ -34,7 +34,7 @@ public class MessageConfig extends BaseMessageConfig<MessageConfig> {
 		if (type == null) {
 			return null;
 		}
-		String sql = "select * from kf_message_config where type = ?";
+		String sql = "select * from lt_message_config where type = ?";
 		return findFirst(sql,type);
 	}
 }

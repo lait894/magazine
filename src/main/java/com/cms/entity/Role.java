@@ -31,7 +31,7 @@ public class Role extends BaseRole<Role> {
 	 * @return 所有角色
 	 */
 	public List<Role> findAll(){
-		return find("select * from kf_role");
+		return find("select * from lt_role");
 	}
 	
     /**
@@ -50,7 +50,7 @@ public class Role extends BaseRole<Role> {
      */
     public List<Admin> getAdmins() {
         if(admins == null){
-            admins = new Admin().dao().find("select * from kf_admin where id in(select adminId from kf_admin_role where roleId=?)",getId());
+            admins = new Admin().dao().find("select * from lt_admin where id in(select adminId from lt_admin_role where roleId=?)",getId());
         }
         return admins;
     }
@@ -70,6 +70,6 @@ public class Role extends BaseRole<Role> {
             filterSql+= " and name like '%"+name+"%'";
         }
 	    String orderBySql = DBUtils.getOrderBySql("createDate desc");
-		return paginate(pageNumber, pageSize, "select *", "from kf_role where 1=1 "+filterSql+orderBySql);
+		return paginate(pageNumber, pageSize, "select *", "from lt_role where 1=1 "+filterSql+orderBySql);
 	}
 }

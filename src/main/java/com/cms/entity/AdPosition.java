@@ -30,7 +30,7 @@ public class AdPosition extends BaseAdPosition<AdPosition> {
 	 * @return 所有广告位
 	 */
 	public List<AdPosition> findAll(){
-		return find("select * from kf_ad_position");
+		return find("select * from lt_ad_position");
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class AdPosition extends BaseAdPosition<AdPosition> {
             filterSql+= " and name like '%"+name+"%'";
         }
 	    String orderBySql = DBUtils.getOrderBySql("createDate desc");
-		return paginate(pageNumber, pageSize, "select *", "from kf_ad_position where 1=1 "+filterSql+orderBySql);
+		return paginate(pageNumber, pageSize, "select *", "from lt_ad_position where 1=1 "+filterSql+orderBySql);
 	}
 	
     /**
@@ -58,7 +58,7 @@ public class AdPosition extends BaseAdPosition<AdPosition> {
      */
     public List<Ad> getAds(){
         if(ads == null){
-            ads = new Ad().dao().find("select * from kf_ad where adPositionId=?",getId());
+            ads = new Ad().dao().find("select * from lt_ad where adPositionId=?",getId());
         }
         return ads;
     }

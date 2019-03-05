@@ -28,7 +28,7 @@ public class CartItem extends BaseCartItem<CartItem> {
      * @return  订单项
      */
     public CartItem find(Long productId,Long cartId){
-        return  findFirst("select * from kf_cart_item where productId=? and cartId=?", productId,cartId);
+        return  findFirst("select * from lt_cart_item where productId=? and cartId=?", productId,cartId);
     }
     
     /**

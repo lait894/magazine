@@ -49,6 +49,6 @@ public class Ad extends BaseAd<Ad> {
             filterSql+= " and title like '%"+title+"%'";
         }
 		String orderBySql = DBUtils.getOrderBySql("createDate desc");
-		return paginate(pageNumber, pageSize, "select *", "from kf_ad where 1=1 "+filterSql+orderBySql);
+		return paginate(pageNumber, pageSize, "select *", "from lt_ad where 1=1 "+filterSql+orderBySql);
 	}
 }

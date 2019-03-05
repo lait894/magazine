@@ -83,7 +83,7 @@ public class Article extends BaseArticle<Article> {
             filterSql+= " and title like '%"+title+"%'";
         }
         String orderBySql = DBUtils.getOrderBySql("createDate desc");
-        return paginate(pageNumber, pageSize, "select *", "from kf_article where 1=1 "+filterSql+orderBySql);
+        return paginate(pageNumber, pageSize, "select *", "from lt_article where 1=1 "+filterSql+orderBySql);
     }
     
     /**
@@ -114,7 +114,7 @@ public class Article extends BaseArticle<Article> {
         }else{
             orderBySql = DBUtils.getOrderBySql("createDate desc");
         }
-        return paginate(pageNumber, pageSize, "select *", "from kf_article where 1=1 "+filterSql+orderBySql);
+        return paginate(pageNumber, pageSize, "select *", "from lt_article where 1=1 "+filterSql+orderBySql);
     }
     
     /**
@@ -150,7 +150,7 @@ public class Article extends BaseArticle<Article> {
             orderBySql = DBUtils.getOrderBySql("createDate desc");
         }
         String countSql=DBUtils.getCountSql(first, count);
-        return find("select * from kf_article where 1=1 "+filterSql+orderBySql+countSql);
+        return find("select * from lt_article where 1=1 "+filterSql+orderBySql+countSql);
     }
     
     
@@ -271,7 +271,7 @@ public class Article extends BaseArticle<Article> {
      * @return 上一篇文章
      */
     public Article getLastArticle(){
-        return findFirst("select * from kf_article where id < ? limit 1",getId());
+        return findFirst("select * from lt_article where id < ? limit 1",getId());
     }
     
     /**
@@ -280,6 +280,6 @@ public class Article extends BaseArticle<Article> {
      * @return 下一篇文章
      */
     public Article getNextArticle(){
-        return findFirst("select * from kf_article where id > ? limit 1",getId());
+        return findFirst("select * from lt_article where id > ? limit 1",getId());
     }
 }

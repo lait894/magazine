@@ -47,7 +47,7 @@ public class Product extends BaseProduct<Product> {
             filterSql+=" and productCategoryId="+productCategoryId;
         }
         String orderBySql = DBUtils.getOrderBySql("createDate desc");
-        return paginate(pageNumber, pageSize, "select *", "from kf_product where 1=1 "+filterSql+orderBySql);
+        return paginate(pageNumber, pageSize, "select *", "from lt_product where 1=1 "+filterSql+orderBySql);
     }
     
     /**
@@ -79,7 +79,7 @@ public class Product extends BaseProduct<Product> {
         }else{
             orderBySql = DBUtils.getOrderBySql(orderBy);
         }
-        return paginate(pageNumber, pageSize, "select *", "from kf_product where 1=1 "+filterSql+orderBySql);
+        return paginate(pageNumber, pageSize, "select *", "from lt_product where 1=1 "+filterSql+orderBySql);
     }
     
     /**
@@ -107,7 +107,7 @@ public class Product extends BaseProduct<Product> {
             orderBySql = DBUtils.getOrderBySql(orderBy);
         }
         String countSql=DBUtils.getCountSql(first, count);
-        return find("select * from kf_product where 1=1 "+filterSql+orderBySql+countSql);
+        return find("select * from lt_product where 1=1 "+filterSql+orderBySql+countSql);
     }
     
     /**

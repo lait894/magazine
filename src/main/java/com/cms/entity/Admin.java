@@ -39,7 +39,7 @@ public class Admin extends BaseAdmin<Admin> {
      */
     public List<Role> getRoles() {
         if(roles == null){
-            roles = new Role().dao().find("select * from kf_role where id in (select roleId from kf_admin_role where adminId=?)",getId());
+            roles = new Role().dao().find("select * from lt_role where id in (select roleId from lt_admin_role where adminId=?)",getId());
         }
         return roles;
     }
@@ -66,7 +66,7 @@ public class Admin extends BaseAdmin<Admin> {
 	 * @return 角色ID
 	 */
 	public List<Long> getRoleIds() {
-		return Db.query("select roleId from kf_admin_role where adminId=?", getId());
+		return Db.query("select roleId from lt_admin_role where adminId=?", getId());
 	}
 	
 	
@@ -81,7 +81,7 @@ public class Admin extends BaseAdmin<Admin> {
 		if (StrKit.isBlank(username)) {
 			return false;
 		}
-		Long count = Db.queryLong("select count(1) from kf_admin where username = ?",username);
+		Long count = Db.queryLong("select count(1) from lt_admin where username = ?",username);
 		return count > 0;
 	}
 
@@ -96,7 +96,7 @@ public class Admin extends BaseAdmin<Admin> {
 		if (StrKit.isBlank(username)) {
 			return null;
 		}
-		return findFirst("select * from kf_admin where username = ?",username);
+		return findFirst("select * from lt_admin where username = ?",username);
 	}
 	
 	/**
@@ -117,6 +117,6 @@ public class Admin extends BaseAdmin<Admin> {
             filterSql+= " and username like '%"+username+"%'";
         }
 	    String orderBySql = DBUtils.getOrderBySql("createDate desc");
-		return paginate(pageNumber, pageSize, "select *", "from kf_admin where 1=1 "+filterSql+orderBySql);
+		return paginate(pageNumber, pageSize, "select *", "from lt_admin where 1=1 "+filterSql+orderBySql);
 	}
 }

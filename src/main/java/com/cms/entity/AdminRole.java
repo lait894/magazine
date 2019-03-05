@@ -22,6 +22,6 @@ public class AdminRole extends BaseAdminRole<AdminRole> {
 	 * @return 管理员角色
 	 */
 	public List<AdminRole> findByAdminId(Long adminId){
-		return find("select * from kf_admin_role where adminId=?",adminId);
+		return find("select * from lt_admin_role where adminId=?",adminId);
 	}
 }

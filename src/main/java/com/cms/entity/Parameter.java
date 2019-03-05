@@ -36,7 +36,7 @@ public class Parameter extends BaseParameter<Parameter> {
             filterSql+= " and subgroup like '%"+subgroup+"%'";
         }
         String orderBySql = DBUtils.getOrderBySql("sort asc");
-        return paginate(pageNumber, pageSize, "select *", "from kf_parameter where 1=1 "+filterSql+orderBySql);
+        return paginate(pageNumber, pageSize, "select *", "from lt_parameter where 1=1 "+filterSql+orderBySql);
     }
     
     /**
@@ -54,7 +54,7 @@ public class Parameter extends BaseParameter<Parameter> {
             filterSql+=" and productCategoryId="+productCategoryId;
         }
         String orderBySql = DBUtils.getOrderBySql("sort asc");
-        return find("select * from kf_parameter where 1=1 "+filterSql+orderBySql);
+        return find("select * from lt_parameter where 1=1 "+filterSql+orderBySql);
     }
     
     /**

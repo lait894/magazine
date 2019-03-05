@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kuaifan>
-	<config name="siteName" value="快帆工作室" />
-	<config name="siteUrl" value="http://localhost:8080/magazine" />
+	<config name="siteName" value="杂志哥" />
+	<config name="siteUrl" value="http://120.78.212.162:8081/magazine" />
 	<config name="logo" value="/upload/image/logo.png" />
-	<config name="title" value="网站建设,网站开发,微信公众号开发,微信小程序开发,微信APP开发,webapp开发" />
-	<config name="keywords" value="快帆工作室,KuaiFanKeJi,互联网建站平台,网站建设,网站开发,微信公众号开发,微信小程序开发,微信APP开发,webapp开发" />
-	<config name="description" value="快帆工作室,KuaiFanKeJi,互联网建站平台,网站建设,网站开发,微信公众号开发,微信小程序开发,微信APP开发,webapp开发,省时省力省心,标准化制作流程,让您建站无忧" />
-	<config name="theme" value="kuaifankeji" />
+	<config name="title" value="" />
+	<config name="keywords" value="" />
+	<config name="description" value="" />
+	<config name="theme" value="default" />
     <config name="largeProductImageWidth" value="450" />
     <config name="largeProductImageHeight" value="700" />
     <config name="mediumProductImageWidth" value="200" />
@@ -23,13 +23,13 @@
 	<config name="fileUploadPath" value="/upload/${.now?string('yyyyMM')}/" />
     <config name="smsAccessKey" value="xxx" />
     <config name="smsAccessSecret" value="xxx" />
-    <config name="smsSignName" value="快帆科技" />
+    <config name="smsSignName" value="杂志哥" />
     <config name="smsEndpoint" value="xxx" />
     <config name="smsTopicName" value="xxx" />
     <config name="alipayAppId" value="xxx" />
     <config name="alipayAppPrivateKey" value="xxx" />
     <config name="alipayPublicKey" value="xxx" />
-    <config name="weixinpayAppId" value="xxx" />
+    <config name="weixinpayAppId" value="xxx" />n
     <config name="weixinpayMchId" value="xxx" />
     <config name="weixinpayKey" value="xxx" />
 </kuaifan>

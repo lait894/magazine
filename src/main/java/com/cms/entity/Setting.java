@@ -21,7 +21,7 @@ public class Setting extends BaseSetting<Setting> {
 	 * @return 设置
 	 */
 	public Setting findByName(String name){
-	    return findFirst("select * from kf_setting where name = ?",name);
+	    return findFirst("select * from lt_setting where name = ?",name);
 	}
 	
 	/**
@@ -30,6 +30,6 @@ public class Setting extends BaseSetting<Setting> {
 	 * @return 所有设置
 	 */
 	public List<Setting> findAll(){
-		return find("select * from kf_setting");
+		return find("select * from lt_setting");
 	}
 }

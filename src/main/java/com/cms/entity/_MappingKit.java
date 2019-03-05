@@ -16,30 +16,30 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 public class _MappingKit {
 	
 	public static void mapping(ActiveRecordPlugin arp) {
-		arp.addMapping("kf_ad", "id", Ad.class);
-		arp.addMapping("kf_ad_position", "id", AdPosition.class);
-		arp.addMapping("kf_admin", "id", Admin.class);
+		arp.addMapping("lt_ad", "id", Ad.class);
+		arp.addMapping("lt_ad_position", "id", AdPosition.class);
+		arp.addMapping("lt_admin", "id", Admin.class);
 		// Composite Primary Key order: adminId,roleId
-		arp.addMapping("kf_admin_role", "adminId,roleId", AdminRole.class);
-		arp.addMapping("kf_area", "id", Area.class);
-		arp.addMapping("kf_article", "id", Article.class);
-		arp.addMapping("kf_article_category", "id", ArticleCategory.class);
-		arp.addMapping("kf_cart", "id", Cart.class);
-		arp.addMapping("kf_cart_item", "id", CartItem.class);
-		arp.addMapping("kf_friend_link", "id", FriendLink.class);
-		arp.addMapping("kf_member", "id", Member.class);
-		arp.addMapping("kf_message_config", "id", MessageConfig.class);
-		arp.addMapping("kf_order", "id", Order.class);
-		arp.addMapping("kf_order_item", "id", OrderItem.class);
-		arp.addMapping("kf_parameter", "id", Parameter.class);
-		arp.addMapping("kf_payment", "id", Payment.class);
-		arp.addMapping("kf_product", "id", Product.class);
-		arp.addMapping("kf_product_category", "id", ProductCategory.class);
-		arp.addMapping("kf_receiver", "id", Receiver.class);
-		arp.addMapping("kf_role", "id", Role.class);
-		arp.addMapping("kf_safe_key", "id", SafeKey.class);
-		arp.addMapping("kf_setting", "id", Setting.class);
-		arp.addMapping("kf_storage_plugin", "id", StoragePlugin.class);
+		arp.addMapping("lt_admin_role", "adminId,roleId", AdminRole.class);
+		arp.addMapping("lt_area", "id", Area.class);
+		arp.addMapping("lt_article", "id", Article.class);
+		arp.addMapping("lt_article_category", "id", ArticleCategory.class);
+		arp.addMapping("lt_cart", "id", Cart.class);
+		arp.addMapping("lt_cart_item", "id", CartItem.class);
+		arp.addMapping("lt_friend_link", "id", FriendLink.class);
+		arp.addMapping("lt_member", "id", Member.class);
+		arp.addMapping("lt_message_config", "id", MessageConfig.class);
+		arp.addMapping("lt_order", "id", Order.class);
+		arp.addMapping("lt_order_item", "id", OrderItem.class);
+		arp.addMapping("lt_parameter", "id", Parameter.class);
+		arp.addMapping("lt_payment", "id", Payment.class);
+		arp.addMapping("lt_product", "id", Product.class);
+		arp.addMapping("lt_product_category", "id", ProductCategory.class);
+		arp.addMapping("lt_receiver", "id", Receiver.class);
+		arp.addMapping("lt_role", "id", Role.class);
+		arp.addMapping("lt_safe_key", "id", SafeKey.class);
+		arp.addMapping("lt_setting", "id", Setting.class);
+		arp.addMapping("lt_storage_plugin", "id", StoragePlugin.class);
 	}
 }
 

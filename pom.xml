@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>JFinalShop</groupId>
-  <artifactId>JFinalShop</artifactId>
+  <groupId>magazine</groupId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
@@ -79,7 +78,7 @@
 	<dependency>
 		<groupId>org.freemarker</groupId>
 		<artifactId>freemarker</artifactId>
-		<version>2.3.22</version>
+		<version>2.3.28</version>
 	</dependency>
 	<dependency>
 		<groupId>com.alibaba</groupId>
@@ -130,7 +129,7 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.4</version>
+			<version>2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-net</groupId>
@@ -183,16 +182,21 @@
 		    <artifactId>slf4j-log4j12</artifactId>
 		    <version>1.7.25</version>
 		</dependency>
+		<dependency>
+		  <groupId>com.alipay.sdk</groupId>
+		  <artifactId>alipay-sdk-java</artifactId>
+		  <version>3.6.0.ALL</version>
+		</dependency>
   </dependencies>	
   <build>
-    <finalName>JFinalShop</finalName>
+    <finalName>magazine</finalName>
     <plugins>
        <plugin>
            <groupId>org.apache.maven.plugins</groupId>
            <artifactId>maven-compiler-plugin</artifactId>
            <configuration>
-               <source>1.8</source>
-               <target>1.8</target>
+               <source>1.7</source>
+               <target>1.7</target>
                <encoding>UTF-8</encoding>
                <compilerArguments>
                    <extdirs>${basedir}/src/main/webapp/WEB-INF/lib</extdirs>
@@ -220,4 +224,5 @@
       </plugin>
 	</plugins>
 </build>
+  <artifactId>magazine</artifactId>
 </project>

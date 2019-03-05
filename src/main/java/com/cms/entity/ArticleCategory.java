@@ -57,7 +57,7 @@ public class ArticleCategory extends BaseArticleCategory<ArticleCategory> {
      */
     public List<Article> getArticles(){
         if(articles == null){
-            articles = new Article().dao().find("select * from kf_article where articleCategoryId = ?",getId());
+            articles = new Article().dao().find("select * from lt_article where articleCategoryId = ?",getId());
         }
         return articles;
     }
@@ -69,7 +69,7 @@ public class ArticleCategory extends BaseArticleCategory<ArticleCategory> {
      */
     public List<ArticleCategory> getChildren() {
         if(children == null){
-            children = find("select * from kf_article_category where parentId=?",getParentId());
+            children = find("select * from lt_article_category where parentId=?",getParentId());
         }
         return children;
     }
@@ -105,7 +105,7 @@ public class ArticleCategory extends BaseArticleCategory<ArticleCategory> {
     public List<ArticleCategory> findRoots(Integer count){
         String orderBySql = DBUtils.getOrderBySql("sort asc");
         String countSql=DBUtils.getCountSql(null, count);
-        return find("select * from kf_article_category where parentId is null "+orderBySql+countSql);
+        return find("select * from lt_article_category where parentId is null "+orderBySql+countSql);
     }
     
     
@@ -128,9 +128,9 @@ public class ArticleCategory extends BaseArticleCategory<ArticleCategory> {
         if(recursive){
             String countSql=DBUtils.getCountSql(null, count);
             String orderBySql = DBUtils.getOrderBySql("grade asc");
-            return find("select * from kf_article_category where id in ("+StringUtils.join(articleCategory.getParentIds(), ",")+") "+orderBySql+countSql);
+            return find("select * from lt_article_category where id in ("+StringUtils.join(articleCategory.getParentIds(), ",")+") "+orderBySql+countSql);
         }else{
-            return find("select * from kf_article_category where id = ? ",findById(articleCategoryId).getParentId());
+            return find("select * from lt_article_category where id = ? ",findById(articleCategoryId).getParentId());
         }
     }
     
@@ -152,15 +152,15 @@ public class ArticleCategory extends BaseArticleCategory<ArticleCategory> {
             String orderBySql = DBUtils.getOrderBySql("grade asc,sort asc");
             List<ArticleCategory> articleCategories;
             if(articleCategoryId!=null){
-                articleCategories = find("select * from kf_article_category where treePath like ? "+orderBySql+countSql,"%,"+articleCategoryId+",%");
+                articleCategories = find("select * from lt_article_category where treePath like ? "+orderBySql+countSql,"%,"+articleCategoryId+",%");
             }else{
-                articleCategories = find("select * from kf_article_category where 1=1 "+orderBySql+countSql);
+                articleCategories = find("select * from lt_article_category where 1=1 "+orderBySql+countSql);
             }
             sort(articleCategories);
             return articleCategories;
         }else{
             String orderBySql = DBUtils.getOrderBySql("sort asc");
-            return find("select * from kf_article_category where parentId = ? "+orderBySql,articleCategoryId);
+            return find("select * from lt_article_category where parentId = ? "+orderBySql,articleCategoryId);
         }
     }
     

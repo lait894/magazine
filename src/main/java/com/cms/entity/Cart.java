@@ -37,7 +37,7 @@ public class Cart extends BaseCart<Cart> {
      * @return  购物车
      */
     public Cart findByCartKey(String cartKey){
-        return findFirst("select * from kf_cart where cartKey=? ",cartKey);
+        return findFirst("select * from lt_cart where cartKey=? ",cartKey);
     }
     
     
@@ -48,7 +48,7 @@ public class Cart extends BaseCart<Cart> {
      */
     public List<CartItem> getCartItems(){
         if(cartItems == null){
-            cartItems = new CartItem().dao().find("select * from kf_cart_item where cartId = ? ", getId());
+            cartItems = new CartItem().dao().find("select * from lt_cart_item where cartId = ? ", getId());
         }
         return cartItems;
     }

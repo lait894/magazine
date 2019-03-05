@@ -33,7 +33,7 @@ public class Member extends BaseMember<Member> {
             filterSql+= " and mobile like '%"+mobile+"%'";
         }
         String orderBySql = DBUtils.getOrderBySql("createDate desc");
-        return paginate(pageNumber, pageSize, "select *", "from kf_member where 1=1 "+filterSql+orderBySql);
+        return paginate(pageNumber, pageSize, "select *", "from lt_member where 1=1 "+filterSql+orderBySql);
     }
     
     /**
@@ -44,6 +44,6 @@ public class Member extends BaseMember<Member> {
      * @return  会员
      */
     public Member findByUsername(String username){
-        return findFirst("select * from kf_member where mobile=? ", username);
+        return findFirst("select * from lt_member where mobile=? ", username);
     }
 }

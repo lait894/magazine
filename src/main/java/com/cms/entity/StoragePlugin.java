@@ -39,7 +39,7 @@ public class StoragePlugin extends BaseStoragePlugin<StoragePlugin> {
 	 * @return 所有存储插件
 	 */
 	public List<StoragePlugin> findAll(){
-		return find("select * from kf_storage_plugin");
+		return find("select * from lt_storage_plugin");
 	}
 	
 	/**
@@ -54,7 +54,7 @@ public class StoragePlugin extends BaseStoragePlugin<StoragePlugin> {
 		if(isEnabled!=null){
 			isEnabledSql = " and isEnabled = "+isEnabled;
 		}
-		return find("select * from kf_storage_plugin where 1=1 "+isEnabledSql);
+		return find("select * from lt_storage_plugin where 1=1 "+isEnabledSql);
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class StoragePlugin extends BaseStoragePlugin<StoragePlugin> {
 	 * @return	存储插件
 	 */
 	public StoragePlugin findByKey(String key){
-		return findFirst("select * from kf_storage_plugin where pluginKey=?",key);
+		return findFirst("select * from lt_storage_plugin where pluginKey=?",key);
 	}
 	
 	/**
@@ -123,7 +123,7 @@ public class StoragePlugin extends BaseStoragePlugin<StoragePlugin> {
 			//File destFile = new File(PathKit.getWebRootPath()+path);
 			File destFile = new File("/home/leon" + path);
 			if (!destFile.exists()) {
-				destFile = new File("D:\\" + path);
+				destFile = new File("C:\\" + path);
 			}
 			try {
 				FileUtils.moveFile(file, destFile);
