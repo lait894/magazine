@@ -121,10 +121,11 @@ public class StoragePlugin extends BaseStoragePlugin<StoragePlugin> {
 	public void upload(String path, File file, String contentType) {
 		if("localStoragePlugin".equals(getId())){
 			//File destFile = new File(PathKit.getWebRootPath()+path);
-			File destFile = new File("/home/leon" + path);
-			if (!destFile.exists()) {
-				destFile = new File("C:\\" + path);
+			File destFolder = new File("/home/leon");
+			if (!destFolder.exists()) {
+				destFolder = new File("C:\\");
 			}
+			File destFile = new File(destFolder.getPath() + path);
 			try {
 				FileUtils.moveFile(file, destFile);
 			} catch (IOException e) {

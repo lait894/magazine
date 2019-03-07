@@ -3330,7 +3330,7 @@ CREATE TABLE `lt_article` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `createDate` datetime NOT NULL,
   `modifyDate` datetime NOT NULL,
-  `content` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `hits` bigint(20) DEFAULT NULL,
   `articleCategoryId` bigint(20) DEFAULT NULL,
