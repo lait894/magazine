@@ -28,7 +28,7 @@ public class Article extends BaseArticle<Article> {
     /**
      * 路径
      */
-    private static final String PATH = "/article/detail/%d_%d";
+    private static final String PATH = "/article/detail/%d-%d";
 
     /**
      * 内容分页长度

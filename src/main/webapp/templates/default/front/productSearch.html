@@ -42,11 +42,11 @@
     	[#list page.list as product]
 			<dl class="J_pro_items">
 	            <dt class="pro_list_pic">
-	                <a href="${product.path}"><img src="${product.image}" alt="" class="goodsimg" width="235" height="137"/></a>
+	                <a href="${base}${product.path}"><img src="${product.image}" alt="" class="goodsimg" width="235" height="137"/></a>
 	            </dt>
 	            <dd class="brand_tit gray"></dd>
 	            <dd class="pro_list_tit">
-	                <a href="${product.path}" title="${product.name}">${product.name}</a>
+	                <a href="${base}${product.path}" title="${product.name}">${product.name}</a>
 	            </dd>
 	            <dd class="pro_list_data">
 	                <span class="deep_red"><em>￥${product.price}</em></span>

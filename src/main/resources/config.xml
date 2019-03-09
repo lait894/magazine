@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kuaifan>
 	<config name="siteName" value="杂志哥" />
-	<config name="siteUrl" value="http://120.78.212.162:8081/magazine" />
+	<config name="siteUrl" value="http://localhost:8081/magazine" />
 	<config name="logo" value="/upload/image/logo.png" />
 	<config name="title" value="" />
 	<config name="keywords" value="" />
