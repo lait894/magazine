@@ -190,7 +190,7 @@ public class ExcelView {
 				if (i == 0) {
 					HSSFPatriarch patriarch = sheet.createDrawingPatriarch();
 					HSSFComment comment = patriarch.createComment(new HSSFClientAnchor(0, 0, 0, 0, (short) 1, 1, (short) 4, 4));
-					comment.setString(new HSSFRichTextString("kuaifankeji"));
+					comment.setString(new HSSFRichTextString("magazine"));
 					cell.setCellComment(comment);
 				}
 				if (titles.length > i && titles[i] != null) {

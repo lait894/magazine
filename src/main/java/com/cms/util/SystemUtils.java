@@ -44,6 +44,8 @@ import net.sf.ehcache.Element;
  * 
  */
 public final class SystemUtils {
+	
+	private static final String CONFIG_TAG_NAME="/magainze/config";
 
 	/** CacheManager */
 	private static final CacheManager CACHE_MANAGER = CacheUtils.getCacheManager();
@@ -133,7 +135,7 @@ public final class SystemUtils {
 			try {
 				File configXmlFile = new File(PathKit.getRootClassPath()+CommonAttribute.CONFIG_XML_PATH);
 				Document document = new SAXReader().read(configXmlFile);
-				List<org.dom4j.Element> elements = document.selectNodes("/kuaifan/config");
+				List<org.dom4j.Element> elements = document.selectNodes(CONFIG_TAG_NAME);
 				for (org.dom4j.Element element : elements) {
 					try {
 						String name = element.attributeValue("name");
@@ -165,7 +167,7 @@ public final class SystemUtils {
 		try {
 			File configXmlFile = new File(PathKit.getRootClassPath()+CommonAttribute.CONFIG_XML_PATH);
 			Document document = new SAXReader().read(configXmlFile);
-			List<org.dom4j.Element> elements = document.selectNodes("/kuaifan/config");
+			List<org.dom4j.Element> elements = document.selectNodes(CONFIG_TAG_NAME);
 			for (org.dom4j.Element element : elements) {
 				try {
 					String name = element.attributeValue("name");

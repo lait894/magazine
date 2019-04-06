@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kuaifan>
+<magazine>
 	<config name="siteName" value="杂志哥" />
 	<config name="siteUrl" value="http://localhost:8081/magazine" />
 	<config name="logo" value="/upload/image/logo.png" />
@@ -32,4 +32,4 @@
     <config name="weixinpayAppId" value="xxx" />n
     <config name="weixinpayMchId" value="xxx" />
     <config name="weixinpayKey" value="xxx" />
-</kuaifan>
+</magazine>
